@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bddfn5yw7auew"]
+
+[ext_resource type="Texture2D" uid="uid://butw7wdel6ex" path="res://assets/sprites/taxix_up.png" id="1_5ssei"]
+
+[node name="taxi1" type="AnimatableBody2D" unique_id=1762820291]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1756395791]
+position = Vector2(-2.0000002, -1.9073486e-06)
+scale = Vector2(0.115, 0.115)
+polygon = PackedVector2Array(-634.7826, -373.913, -52.173912, -382.60867, 565.21735, -356.5217, 704.3478, -191.30434, 791.3043, -52.173897, 826.0869, 78.26088, 817.3913, 139.13045, 817.3913, 226.08696, 791.3043, 304.34784, 704.3478, 321.73917, 591.3043, 321.73917, 565.21735, 365.2174, 521.73914, 408.69568, 443.47824, 434.78262, 365.21738, 408.69568, 321.7391, 330.4348, -286.9565, 321.73917, -304.34784, 365.2174, -339.13043, 408.69568, -417.3913, 443.47827, -495.65216, 417.39133, -547.8261, 339.13046, -573.913, 313.0435, -817.3913, 295.6522, -834.7826, 226.08696, -817.3913, 147.8261, -800, -78.26085, -739.13043, -234.7826, -686.95654, -339.1304)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1319826398]
+position = Vector2(-2.0000002, -1.9073486e-06)
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("1_5ssei")
+flip_h = true

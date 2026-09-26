@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bl885p73ql3pm" path="res://assets/sprites/player_sheet.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://cwlm1ogx1v6xh" path="res://scripts/player.gd" id="1_g2els"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqbik"]
+size = Vector2(10.25, 16.75)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
 region = Rect2(0, 0, 89, 116)
@@ -162,23 +165,20 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqbik"]
-size = Vector2(9, 13.5)
-
 [node name="Player" type="CharacterBody2D" unique_id=2086263562]
 collision_mask = 16
 motion_mode = 1
 wall_min_slide_angle = 0.17453292
 script = ExtResource("1_g2els")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=493202078]
+position = Vector2(1, 19)
+shape = SubResource("RectangleShape2D_dqbik")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=922996822]
 scale = Vector2(0.46067417, 0.46067426)
 sprite_frames = SubResource("SpriteFrames_dqbik")
 animation = &"run_down"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=493202078]
-position = Vector2(2, 17)
-shape = SubResource("RectangleShape2D_dqbik")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=600820771]
 zoom = Vector2(1.5, 1.5)
