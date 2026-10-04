@@ -6,7 +6,10 @@ const SPEED = 120.0
 enum Direction { DOWN, UP, LEFT, RIGHT }
 var facing_direction: Direction = Direction.DOWN
 
-func _physics_process(delta: float) -> void:
+func _ready() -> void:
+	add_to_group("player")
+
+func _physics_process(_delta: float) -> void:
 	var input_vector := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_vector * SPEED
 	move_and_slide()

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cw0pqeqqno86"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=830888120]
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=2129446209]
+offset_left = 79.0
+offset_top = 344.0
+offset_right = 119.0
+offset_bottom = 384.0

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b8nq6pv620nav" path="res://assets/sprites/lotador_atlas_clean.png" id="5_p57ef"]
 [ext_resource type="Texture2D" uid="uid://53gqsqke5ps1" path="res://assets/sprites/objetos-obstaculos.png" id="6_p57ef"]
 [ext_resource type="Texture2D" uid="uid://y6fxjlhu0vrv" path="res://assets/sprites/cenario_npc.png" id="7_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://c51pms4buljq7" path="res://scenes/npc.tscn" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://bmbrqy4kgmhkx" path="res://scenes/passenger.tscn" id="9_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5sy4"]
 texture = ExtResource("5_p57ef")
@@ -6981,35 +6981,10 @@ size = Vector2(1508.25, 18)
 
 [sub_resource type="Animation" id="Animation_0tnpc"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-104, 338)]
-}
 
 [sub_resource type="Animation" id="Animation_vtaks"]
 resource_name = "taxi_move"
 length = 5.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-622, 340), Vector2(1873, 338)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kvpfn"]
 _data = {
@@ -7123,16 +7098,14 @@ collision_mask = 16
 position = Vector2(-249.99998, 484)
 shape = SubResource("RectangleShape2D_416y6")
 
-[node name="npc" parent="." unique_id=1972406730 instance=ExtResource("8_gee14")]
-position = Vector2(402, 222)
-scale = Vector2(0.935, 0.935)
-collision_layer = 16
-collision_mask = 16
+[node name="Passenger" parent="." unique_id=1469363836 instance=ExtResource("9_vtaks")]
+position = Vector2(215, 221)
+boarding_target_path = NodePath("../taxi/BoardingZone")
 
 [node name="taxi" parent="." unique_id=1599897138 instance=ExtResource("1_0tnpc")]
-position = Vector2(-104, 338)
-collision_layer = 16
+position = Vector2(-622, 340)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="taxi" unique_id=743214168]
 libraries/ = SubResource("AnimationLibrary_kvpfn")
-autoplay = &"taxi_move"
+
+[editable path="taxi"]

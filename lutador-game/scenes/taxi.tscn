@@ -1,14 +1,31 @@
 [gd_scene format=3 uid="uid://jfstiyf2rf1r"]
 
 [ext_resource type="Texture2D" uid="uid://butw7wdel6ex" path="res://assets/sprites/taxix_up.png" id="1_i2df7"]
+[ext_resource type="Script" uid="uid://nu72gwyi5gcv" path="res://scripts/taxi.gd" id="1_qfcln"]
 
-[node name="taxi" type="CharacterBody2D" unique_id=1599897138]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boarding"]
+size = Vector2(120, 70)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1482378047]
+[node name="taxi" type="CharacterBody2D" groups=["taxi"]]
+script = ExtResource("1_qfcln")
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-72, -47, -5, -49, 69, -46, 77, -35, 87, -22, 94, -12, 96, 1, 97, 18, 92, 32, 70, 32, 68, 35, 62, 43, 55, 45, 49, 44, 43, 41, 40, 36, 40, 32, -32, 32, -34, 40, -41, 45, -48, 45, -58, 40, -59, 30, -64, 32, -81, 30, -92, 30, -93, 18, -90, 3, -89, -15, -75, -46)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1839189035]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2.829132, -5.1874695)
 scale = Vector2(0.11518548, 0.11518546)
 texture = ExtResource("1_i2df7")
 flip_h = true
+
+[node name="BoardingZone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 17
+monitoring = true
+monitorable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoardingZone"]
+position = Vector2(40, 10)
+shape = SubResource("RectangleShape2D_boarding")
